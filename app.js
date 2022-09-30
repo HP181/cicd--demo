@@ -2,9 +2,10 @@ const express = require('express')
 const app = express();
 const path = require('path')
 
-app.use(express.static(path.join(__dirname, '/frontend/build')));
 
 app.get('/names', (req, res) => {
+  // app.use(express.static(path.join(__dirname, '/frontend/build')));
+  res.sendFile(path.join(__dirname, './static/build/index.html'))
   res.send("Telmo Sampaio");
 })
 
